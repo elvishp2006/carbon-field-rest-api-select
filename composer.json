@@ -1,6 +1,7 @@
 {
     "name": "elvishp2006/carbon-field-rest-api-select",
     "description": "Carbon Fields extension, that adds a rest_api_select field type.",
+    "version": "0.1.0",
     "keywords": ["wordpress", "carbon-field", "carbon-field-rest-api-select"],
     "type": "library",
     "license": "GPL-2.0+",
