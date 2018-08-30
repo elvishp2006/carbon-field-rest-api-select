@@ -3,7 +3,7 @@
  * Carbon Field REST API Select.
  *
  * @package Carbon_Field_Rest_Api_Select
- * @version 0.1.0
+ * @version 0.1.1
  */
 
 if ( ! function_exists( 'add_action' ) ) {

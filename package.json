@@ -1,6 +1,6 @@
 {
   "name": "carbon-field-rest-api-select",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "webpack -w",
     "build": "webpack",
@@ -16,6 +16,7 @@
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "webpack": "2.2.*"
   },
   "dependencies": {
