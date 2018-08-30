@@ -60,6 +60,9 @@ RestApiSelectField.defaultProps = {
   selected: null,
 };
 
+const resolve = (path, obj) => path.split('.')
+  .reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+
 export const enhance = compose(
   withStore(),
   withSetup(),
@@ -73,12 +76,15 @@ export const enhance = compose(
       }
     },
 
-    loadOptions: ({ field: { endpoint, value }, setSelected }) => (inputValue) => {
-      if (value && !inputValue) {
-        return fetch(`${endpoint}/${value}`)
+    loadOptions: ({ field, setSelected }) => (inputValue) => {
+      if (field.value && !inputValue) {
+        return fetch(`${field.endpoint}/${field.value}`)
           .then(response => response.json())
-          .then(({ id, title }) => {
-            const option = { value: id, label: he.decode(title.rendered) };
+          .then((data) => {
+            const option = {
+              value: resolve(field.endpoint_value_path, data),
+              label: he.decode(resolve(field.endpoint_label_path, data)),
+            };
 
             setSelected(option);
 
@@ -86,11 +92,11 @@ export const enhance = compose(
           });
       }
 
-      return fetch(`${endpoint}/?search=${inputValue}`)
+      return fetch(`${field.endpoint}/?${field.endpoint_search_param}=${inputValue}`)
         .then(response => response.json())
-        .then(json => json.map(({ id, title }) => ({
-          value: id,
-          label: he.decode(title.rendered),
+        .then(json => json.map(data => ({
+          value: resolve(field.endpoint_value_path, data),
+          label: he.decode(resolve(field.endpoint_label_path, data)),
         })));
     },
   }),

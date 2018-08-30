@@ -25,6 +25,30 @@ class Rest_Api_Select_Field extends Field {
 	protected $endpoint;
 
 	/**
+	 * Endpoint label path.
+	 *
+	 * @var string
+	 * @since 0.2.0
+	 */
+	protected $endpoint_label_path = 'title.rendered';
+
+	/**
+	 * Endpoint value path.
+	 *
+	 * @var string
+	 * @since 0.2.0
+	 */
+	protected $endpoint_value_path = 'id';
+
+	/**
+	 * Endpoint search param.
+	 *
+	 * @var string
+	 * @since 0.2.0
+	 */
+	protected $endpoint_search_param = 'search';
+
+	/**
 	 * Set Endpoint.
 	 *
 	 * @param string $endpoint REST API Endpoint.
@@ -44,6 +68,72 @@ class Rest_Api_Select_Field extends Field {
 	 */
 	public function get_endpoint() {
 		return $this->endpoint;
+	}
+
+	/**
+	 * Set endpoint label path.
+	 *
+	 * @param string $endpoint_label_path Endpoint label path.
+	 * @return $this
+	 * @since 0.2.0
+	 */
+	public function set_endpoint_label_path( $endpoint_label_path ) {
+		$this->endpoint_label_path = $endpoint_label_path;
+		return $this;
+	}
+
+	/**
+	 * Get endpoint label path.
+	 *
+	 * @return string
+	 * @since 0.2.0
+	 */
+	public function get_endpoint_label_path() {
+		return $this->endpoint_label_path;
+	}
+
+	/**
+	 * Set endpoint value path.
+	 *
+	 * @param string $endpoint_value_path Endpoint value path.
+	 * @return $this
+	 * @since 0.2.0
+	 */
+	public function set_endpoint_value_path( $endpoint_value_path ) {
+		$this->endpoint_value_path = $endpoint_value_path;
+		return $this;
+	}
+
+	/**
+	 * Get endpoint value path.
+	 *
+	 * @return string
+	 * @since 0.2.0
+	 */
+	public function get_endpoint_value_path() {
+		return $this->endpoint_value_path;
+	}
+
+	/**
+	 * Set endpoint search param.
+	 *
+	 * @param string $endpoint_search_param Endpoint search param.
+	 * @return $this
+	 * @since 0.2.0
+	 */
+	public function set_endpoint_search_param( $endpoint_search_param ) {
+		$this->endpoint_search_param = $endpoint_search_param;
+		return $this;
+	}
+
+	/**
+	 * Get endpoint search param.
+	 *
+	 * @return string
+	 * @since 0.2.0
+	 */
+	public function get_endpoint_search_param() {
+		return $this->endpoint_search_param;
 	}
 
 	/**
@@ -83,7 +173,10 @@ class Rest_Api_Select_Field extends Field {
 		$field_data = parent::to_json( $load );
 
 		$field_data = array_merge( $field_data, array(
-			'endpoint' => $this->get_endpoint(),
+			'endpoint'              => $this->get_endpoint(),
+			'endpoint_label_path'   => $this->get_endpoint_label_path(),
+			'endpoint_value_path'   => $this->get_endpoint_value_path(),
+			'endpoint_search_param' => $this->get_endpoint_search_param(),
 		) );
 
 		return $field_data;
