@@ -1,6 +1,6 @@
 {
   "name": "carbon-field-rest-api-select",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "dev": "webpack -w",
     "build": "webpack",
@@ -15,6 +15,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "webpack": "2.2.*"

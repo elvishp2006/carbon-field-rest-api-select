@@ -2,10 +2,7 @@
  * The external dependencies.
  */
 import {
-  compose,
-  withHandlers,
-  withState,
-  setStatic,
+  compose, withHandlers, withState, setStatic,
 } from 'recompose';
 
 import he from 'he';
@@ -21,11 +18,7 @@ import withStore from 'fields/decorators/with-store';
 import withSetup from 'fields/decorators/with-setup';
 
 export const RestApiSelectField = ({
-  name,
-  field,
-  handleChange,
-  loadOptions,
-  selected,
+  name, field, handleChange, loadOptions, selected,
 }) => (
   <Field field={field}>
     <Select
@@ -60,8 +53,7 @@ RestApiSelectField.defaultProps = {
   selected: null,
 };
 
-const resolve = (path, obj) => path.split('.')
-  .reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+const resolve = (path, obj) => path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
 
 export const enhance = compose(
   withStore(),
@@ -89,6 +81,16 @@ export const enhance = compose(
             setSelected(option);
 
             return [option];
+          })
+          .catch(() => {
+            const option = {
+              value: field.value,
+              label: '...',
+            };
+
+            setSelected(option);
+
+            return [option];
           });
       }
 
@@ -102,6 +104,4 @@ export const enhance = compose(
   }),
 );
 
-export default setStatic('type', [
-  'rest_api_select',
-])(enhance(RestApiSelectField));
+export default setStatic('type', ['rest_api_select'])(enhance(RestApiSelectField));
