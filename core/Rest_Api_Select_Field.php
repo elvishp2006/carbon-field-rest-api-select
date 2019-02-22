@@ -134,7 +134,7 @@ class Rest_Api_Select_Field extends Field {
 	 *
 	 * @return array
 	 */
-	public function get_endpoint_params() : array {
+	public function get_endpoint_params() {
 		return $this->endpoint_params;
 	}
 
@@ -144,7 +144,7 @@ class Rest_Api_Select_Field extends Field {
 	 * @param array $value Endpoint params.
 	 * @return self
 	 */
-	public function set_endpoint_params( $value ) : self {
+	public function set_endpoint_params( $value ) {
 		$this->endpoint_params = $value;
 		return $this;
 	}
