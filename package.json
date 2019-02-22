@@ -1,6 +1,5 @@
 {
   "name": "carbon-field-rest-api-select",
-  "version": "0.2.1",
   "scripts": {
     "dev": "webpack -w",
     "build": "webpack",
