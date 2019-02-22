@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01e0aa9a671a1eab9f49cc415b630399",
+    "content-hash": "34304ad0acf105af668671d24e97a324",
     "packages": [
         {
             "name": "htmlburger/carbon-fields",
-            "version": "2.2.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "f2e7e7b306f872b606b16909d2a2ee906381d5d1"
+                "reference": "6425d314b1c9bcdcc83660ac400e20e57582ddd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/f2e7e7b306f872b606b16909d2a2ee906381d5d1",
-                "reference": "f2e7e7b306f872b606b16909d2a2ee906381d5d1",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/6425d314b1c9bcdcc83660ac400e20e57582ddd6",
+                "reference": "6425d314b1c9bcdcc83660ac400e20e57582ddd6",
                 "shasum": ""
             },
             "require": {
@@ -123,11 +123,21 @@
                     "name": "Viktor Vasilev",
                     "email": "liberalcho@gmail.com",
                     "role": "Developer"
+                },
+                {
+                    "name": "Georgi Georgiev",
+                    "email": "george.georgiev96@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Atanas Vasilev",
+                    "email": "atanasvasilev91@gmail.com",
+                    "role": "Developer"
                 }
             ],
             "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
             "homepage": "http://carbonfields.net/",
-            "time": "2018-03-16T09:06:14+00:00"
+            "time": "2019-01-14T12:30:37+00:00"
         }
     ],
     "packages-dev": [
