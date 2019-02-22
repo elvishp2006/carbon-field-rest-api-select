@@ -43,6 +43,13 @@ class Rest_Api_Select_Field extends Field {
 	protected $endpoint_search_param = 'search';
 
 	/**
+	 * Endpoint args.
+	 *
+	 * @var array
+	 */
+	protected $endpoint_args = [];
+
+	/**
 	 * Set Endpoint.
 	 *
 	 * @param string $endpoint REST API Endpoint.
@@ -123,6 +130,26 @@ class Rest_Api_Select_Field extends Field {
 	}
 
 	/**
+	 * Get endpoint args.
+	 *
+	 * @return array
+	 */
+	public function get_endpoint_args() {
+		return $this->endpoint_args;
+	}
+
+	/**
+	 * Set endpoint args.
+	 *
+	 * @param array $value Endpoint args.
+	 * @return self
+	 */
+	public function set_endpoint_args( $value ) {
+		$this->endpoint_args = $value;
+		return $this;
+	}
+
+	/**
 	 * {@inheritDoc}
 	 *
 	 * @return void
@@ -163,6 +190,7 @@ class Rest_Api_Select_Field extends Field {
 				'endpoint_label_path'   => $this->get_endpoint_label_path(),
 				'endpoint_value_path'   => $this->get_endpoint_value_path(),
 				'endpoint_search_param' => $this->get_endpoint_search_param(),
+				'endpoint_args'         => $this->get_endpoint_args(),
 			]
 		);
 
