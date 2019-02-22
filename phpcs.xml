@@ -10,7 +10,7 @@
 	<!-- Ignoring Files and Folders:
 		https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders -->
 	<exclude-pattern>node_modules/</exclude-pattern>
-	<exclude-pattern>vendor/</exclude-pattern>
+	<exclude-pattern type="relative">vendor/</exclude-pattern>
 
 	<!-- How to scan -->
 	<arg value="sp"/> <!-- Show sniff and progress -->
