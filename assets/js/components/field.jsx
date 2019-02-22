@@ -95,7 +95,7 @@ export const enhance = compose(
           });
       }
 
-      return fetch(`${field.endpoint}/?${field.endpoint_search_param}=${inputValue}&per_page=20`)
+      return fetch(`${field.endpoint}/?${field.endpoint_search_param}=${inputValue}`)
         .then(response => response.json())
         .then(json => json.map(data => ({
           value: resolve(field.endpoint_value_path, data),
