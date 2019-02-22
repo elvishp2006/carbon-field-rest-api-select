@@ -95,13 +95,13 @@ export const enhance = compose(
           });
       }
 
-      const args = {
-        ...field.endpoint_args,
+      const params = {
+        ...field.endpoint_params,
       };
 
-      args[field.endpoint_search_param] = inputValue;
+      params[field.endpoint_search_param] = inputValue;
 
-      return fetch(`${field.endpoint}/?${$.param(args)}`)
+      return fetch(`${field.endpoint}/?${$.param(params)}`)
         .then(response => response.json())
         .then(json => json.map(data => ({
           value: resolve(field.endpoint_value_path, data),
