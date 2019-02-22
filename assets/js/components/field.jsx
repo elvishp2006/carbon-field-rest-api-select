@@ -16,7 +16,7 @@ import t from 'prop-types';
 import Field from 'fields/components/field';
 import withStore from 'fields/decorators/with-store';
 import withSetup from 'fields/decorators/with-setup';
-import debounce from 'lodash/debounce';
+import $ from 'jquery';
 
 export const RestApiSelectField = ({
   name, field, handleChange, loadOptions, selected,
@@ -30,7 +30,7 @@ export const RestApiSelectField = ({
       value={selected}
       onChange={handleChange}
       defaultOptions
-      loadOptions={debounce(loadOptions, 500)}
+      loadOptions={loadOptions}
       isClearable
     />
   </Field>
@@ -95,7 +95,13 @@ export const enhance = compose(
           });
       }
 
-      return fetch(`${field.endpoint}/?${field.endpoint_search_param}=${inputValue}`)
+      const params = {
+        ...field.endpoint_params,
+      };
+
+      params[field.endpoint_search_param] = inputValue;
+
+      return fetch(`${field.endpoint}/?${$.param(params)}`)
         .then(response => response.json())
         .then(json => json.map(data => ({
           value: resolve(field.endpoint_value_path, data),
