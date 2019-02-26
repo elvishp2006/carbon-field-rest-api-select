@@ -10,7 +10,7 @@
   "license": "GPL-2.0+",
   "authors": [],
   "require": {
-    "htmlburger/carbon-fields": "^3.0.0"
+    "htmlburger/carbon-fields": "2.2.0"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
