@@ -2,7 +2,7 @@
   "name": "carbon-field-rest-api-select",
   "scripts": {
     "dev": "webpack -w",
-    "build": "webpack",
+    "build": "webpack --env.production",
     "lint:scripts": "eslint ./assets/js/**/*"
   },
   "devDependencies": {
