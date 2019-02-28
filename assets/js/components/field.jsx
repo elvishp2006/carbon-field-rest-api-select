@@ -63,10 +63,7 @@ export const enhance = compose(
   withHandlers({
     handleChange: ({ field, setFieldValue, setSelected }) => (selected) => {
       setSelected(selected);
-
-      if (selected) {
-        setFieldValue(field.id, selected.value);
-      }
+      setFieldValue(field.id, selected ? selected.value : '');
     },
 
     loadOptions: ({ field, setSelected }) => (inputValue) => {
