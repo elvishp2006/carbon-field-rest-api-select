@@ -20,8 +20,8 @@
   "dependencies": {
     "he": "1.2.0",
     "prop-types": "15.7.2",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "react-select": "2.4.1",
     "recompose": "0.30.0"
   }
