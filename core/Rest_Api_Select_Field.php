@@ -170,7 +170,7 @@ class Rest_Api_Select_Field extends Field {
 	public static function admin_enqueue_scripts() {
 		$root_uri = \Carbon_Fields\Carbon_Fields::directory_to_url( \Carbon_Field_Rest_Api_Select\DIR );
 
-		wp_enqueue_script( 'carbon-field-rest-api-select', $root_uri . '/assets/js/bundle.js', [ 'carbon-fields-boot' ], \Carbon_Field_Rest_Api_Select\VERSION, true );
+		wp_enqueue_script( 'carbon-field-rest-api-select', $root_uri . '/assets/js/bundle.js', [ 'carbon-fields-boot', 'wp-api' ], \Carbon_Field_Rest_Api_Select\VERSION, true );
 		wp_enqueue_style( 'carbon-field-rest-api-select', $root_uri . '/assets/css/field.css', [], \Carbon_Field_Rest_Api_Select\VERSION );
 	}
 
