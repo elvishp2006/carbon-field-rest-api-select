@@ -9,7 +9,7 @@
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4",
     "@babel/preset-react": "7.0.0",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.0.6",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.16.0",
