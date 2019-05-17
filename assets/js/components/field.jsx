@@ -67,13 +67,14 @@ export const enhance = compose(
     },
 
     loadOptions: ({ field, setSelected }) => (inputValue) => {
+      const headers = new Headers({
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': wpApiSettings.nonce,
+        credentials: 'same-origin',
+      });
+
       if (field.value && !inputValue) {
-        const headers = new Headers({
-              'Content-Type': 'application/json',
-              'X-WP-Nonce': wpApiSettings.nonce,
-              'credentials': 'same-origin'
-          });
-        return fetch(`${field.endpoint}/${field.value}`, { headers: headers })
+        return fetch(`${field.endpoint}/${field.value}`, { headers })
           .then(response => response.json())
           .then((data) => {
             const option = {
@@ -103,7 +104,7 @@ export const enhance = compose(
 
       params[field.endpoint_search_param] = inputValue;
 
-      return fetch(`${field.endpoint}/?${$.param(params)}`,{ headers: headers })
+      return fetch(`${field.endpoint}/?${$.param(params)}`, { headers })
         .then(response => response.json())
         .then(json => json.map(data => ({
           value: resolve(field.endpoint_value_path, data),
