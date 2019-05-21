@@ -31,6 +31,7 @@ export const RestApiSelectField = ({
       onChange={handleChange}
       defaultOptions
       loadOptions={loadOptions}
+      classNamePrefix="react-select"
       isClearable
     />
   </Field>
