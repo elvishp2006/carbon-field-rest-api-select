@@ -13,10 +13,10 @@
     "htmlburger/carbon-fields": "2.2.0"
   },
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
-    "squizlabs/php_codesniffer": "3.4.2",
-    "wp-coding-standards/wpcs": "2.1.1",
-    "phpcompatibility/phpcompatibility-wp": "2.0.0"
+    "dealerdirect/phpcodesniffer-composer-installer": "0.6.2",
+    "squizlabs/php_codesniffer": "3.5.5",
+    "wp-coding-standards/wpcs": "2.3.0",
+    "phpcompatibility/phpcompatibility-wp": "2.1.0"
   },
   "autoload": {
     "files": [
