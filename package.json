@@ -15,7 +15,7 @@
     "eslint-plugin-import": "2.20.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.20.0",
-    "webpack": "2.7.0"
+    "webpack": "5.94.0"
   },
   "dependencies": {
     "he": "1.2.0",
