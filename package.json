@@ -6,7 +6,7 @@
     "lint:scripts": "eslint ./assets/js/**/*"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
+    "@babel/core": "7.29.6",
     "@babel/preset-env": "7.10.2",
     "@babel/preset-react": "7.10.1",
     "babel-loader": "8.1.0",
